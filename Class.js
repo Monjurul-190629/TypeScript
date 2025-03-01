@@ -60,3 +60,30 @@ var Rec1 = new Rectangle(10, 5);
 console.log(Rec1.getArea());
 var Sqr = new Square(20);
 console.log(Sqr.getArea());
+/* When a class extends another class, it can replace the members of the parent class with the same name.
+
+Newer versions of TypeScript allow explicitly marking this with the override keyword. */
+var People = /** @class */ (function () {
+    function People(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+    People.prototype.getIntro = function () {
+        return "His name is ".concat(this.name, " and His age is ").concat(this.age);
+    };
+    return People;
+}());
+var P1 = /** @class */ (function (_super) {
+    __extends(P1, _super);
+    function P1(name, age, cls) {
+        var _this = _super.call(this, name, age) || this;
+        _this.cls = cls;
+        return _this;
+    }
+    P1.prototype.getIntro = function () {
+        return "His name is ".concat(this.name, " and His age is ").concat(this.age, " and His class is ").concat(this.cls);
+    };
+    return P1;
+}(People));
+var PP = new P1('Jhon', 32, 'A');
+console.log(PP.getIntro());
