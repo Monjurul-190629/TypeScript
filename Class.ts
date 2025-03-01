@@ -137,3 +137,33 @@ class P1 extends People{
 const PP = new P1('Jhon', 32, 'A');
 
 console.log(PP.getIntro())
+
+
+/* 
+Abstract Class
+An abstract class is a class that cannot be instantiated and is meant to be inherited by other classes. 
+It serves as a blueprint for derived classes, 
+providing common methods and properties while enforcing certain functionalities that must be implemented by subclasses
+
+*/
+
+abstract class Polygon{
+  public abstract getArea() : number;
+
+  public toString() : string{
+    return `This is done by abstract class.`
+  }
+}
+
+class Rec2 extends Polygon{
+  public constructor(protected readonly height: number, protected readonly width: number){
+    super();
+  }
+  public getArea():number{
+    return this.width * this.height;
+  }
+}
+
+
+const R2  = new Rec2(20, 10);
+console.log(R2.getArea())

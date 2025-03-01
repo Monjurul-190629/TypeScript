@@ -87,3 +87,33 @@ var P1 = /** @class */ (function (_super) {
 }(People));
 var PP = new P1('Jhon', 32, 'A');
 console.log(PP.getIntro());
+/*
+Abstract Class
+An abstract class is a class that cannot be instantiated and is meant to be inherited by other classes.
+It serves as a blueprint for derived classes,
+providing common methods and properties while enforcing certain functionalities that must be implemented by subclasses
+
+*/
+var Polygon = /** @class */ (function () {
+    function Polygon() {
+    }
+    Polygon.prototype.toString = function () {
+        return "This is done by abstract class.";
+    };
+    return Polygon;
+}());
+var Rec2 = /** @class */ (function (_super) {
+    __extends(Rec2, _super);
+    function Rec2(height, width) {
+        var _this = _super.call(this) || this;
+        _this.height = height;
+        _this.width = width;
+        return _this;
+    }
+    Rec2.prototype.getArea = function () {
+        return this.width * this.height;
+    };
+    return Rec2;
+}(Polygon));
+var R2 = new Rec2(20, 10);
+console.log(R2.getArea());
