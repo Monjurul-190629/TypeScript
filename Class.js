@@ -117,3 +117,4 @@ var Rec2 = /** @class */ (function (_super) {
 }(Polygon));
 var R2 = new Rec2(20, 10);
 console.log(R2.getArea());
+console.log(R2.toString());

@@ -167,3 +167,4 @@ class Rec2 extends Polygon{
 
 const R2  = new Rec2(20, 10);
 console.log(R2.getArea())
+console.log(R2.toString())
